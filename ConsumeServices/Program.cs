@@ -54,16 +54,16 @@ namespace WebServiceConsumer
                             await DeleteProductJson();
                             break;
                         case "5":
-
+                            await GetAllProductsXml();
                             break;
                         case "6":
-
+                            await CreateProductXml();
                             break;
                         case "7":
-
+                            await UpdateProductXml();
                             break;
                         case "8":
-
+                            await DeleteProductXml();
                             break;
                         case "9":
                             exit = true;
@@ -87,6 +87,7 @@ namespace WebServiceConsumer
                 }
             }
         }
+
 
         static async Task GetAllProductsJson()
         {
@@ -202,6 +203,27 @@ namespace WebServiceConsumer
 
             // Show updated list
             await GetAllProductsJson();
+        }
+
+        // XML Operations Implementation
+        static async Task GetAllProductsXml()
+        {
+            await XmlHelper.GetAllProductsXml();
+        }
+
+        static async Task CreateProductXml()
+        {
+            await XmlHelper.CreateProductXml();
+        }
+
+        static async Task UpdateProductXml()
+        {
+            await XmlHelper.UpdateProductXml();
+        }
+
+        static async Task DeleteProductXml()
+        {
+            await XmlHelper.DeleteProductXml();
         }
     }
 }
